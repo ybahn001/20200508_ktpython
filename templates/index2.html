@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB-Python</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1><a href="/">WEB</a></h1>
+        <div id="container">
+            <ol>
+                {% for m in menu %}
+                    <li><a href="/{{ m['id'] }}">{{ m['title'] }}</a></li>
+                {% endfor %}
+            </ol>
+            <div>
+                <h2>Welcome</h2> 
+                <p>
+                    {% if user %}{{ user['name'] }}{% else %}비회원{% endif %} 님 안녕하세요.
+                    {% if user %}
+                        <a href="/logout">로그아웃하기</a>
+                    {% else %}
+                        <a href="/login">로그인하기</a>
+                    {% endif %}
+                </p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, voluptatem.
+            </div>    
+        </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<h1>word count - {{ lang }}</h1>
+<form action="/wordcount/{{ lang }}" method="post">
+    <p><textarea name="lyrics" cols="100" rows="10"></textarea></p>
+    <p><input type="submit"></p>
+</form>
+
+<hr>
+
+<h2>result</h2>
+<ul>
+{% for k, v in words %}
+    <li>{{ k }}: {{ v }}</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,21 @@
+<h1>다음 인기 영화 목록 추출</h1>
+<form action="/movies" method="post">
+    <input type="text" name="weeks" placeholder="weeks">
+    <input type="submit">
+</form>
+
+{% for ss in soup %}
+<hr>
+<h3>{{ loop.index }} 주전</h3>
+<div>
+    {% for s in ss %}
+    <ul>
+        <li><strong>{{ loop.index }}위</strong></li>
+        <li>제목: {{ s['title'] }}</li>
+        <li>평점: {{ s['rating'] }}</li>
+        <li>관객수: {{ s['visitors'] }}</li>
+        <li>개봉일: {{ s['opened'] }}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endfor %}
